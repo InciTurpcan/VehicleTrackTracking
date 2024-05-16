@@ -1,0 +1,49 @@
+﻿@model List<CarDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<td><a href="/Car/CreateCar/" class="btn btn-success">+ ADD CAR</a></td>
+
+<table class=" table table-hover">
+    <thead>
+        <tr>
+
+            <th scope="col">Id</th>
+            <th scope="col">Plate Number</th>
+            <th scope="col">Model</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Color</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+       
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.CarId</th>
+                <td>@item.PlateNumber</td>
+                <td>@item.Model</td>
+                <td>@item.Brand</td>
+                <td>@item.Color</td>
+                <td><a href="/Car/UpdateCar/@item.CarId"  class="btn btn-secondary">Update</a></td>
+                <td><a href="/Car/DeleteCar/@item.CarId"  class="btn btn-danger">Delete</a></td>
+                <td><a href="/Car/CarDetails/@item.CarId"  class="btn btn-primary">Detail</a></td>
+
+
+              
+
+            </tr>
+        }
+           
+        
+
+    </tbody>
+</table>
+

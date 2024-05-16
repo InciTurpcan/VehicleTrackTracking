@@ -1,0 +1,43 @@
+﻿@model List<ResultPartCategoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<td><a href="/PartCategory/CreatePartCategory/" class="btn btn-success">+ ADD PARTCATEGORY</a></td>
+
+<table class=" table table-hover">
+    <thead>
+        <tr>
+
+            <th scope="col">Part Id</th>
+            <th scope="col">Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.PartCategoryId</th>
+                <td>@item.PartCategoryName</td>
+
+                <td><a href="/PartCategory/UpdatePartCategory/@item.PartCategoryId" class="btn btn-secondary">Update</a></td>
+                <td><a href="/PartCategory/DeletePartCategory/@item.PartCategoryId" class="btn btn-danger">Delete</a></td>
+
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
