@@ -6,3 +6,4 @@ The project is developed using the following technologies:
 - **Unit Of Work**
 - **Stored Procedure**
 - **RESTful Api**
+- **ASP.NET MVC**
